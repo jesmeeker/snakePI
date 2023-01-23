@@ -130,6 +130,7 @@ def retrieve(resource, id):
             return single_species.__dict__
 
         if resource == 'snakes':
+
             db_cursor.execute("""
             SELECT
                 s.id,
@@ -149,7 +150,11 @@ def retrieve(resource, id):
             snake = Snake(data['id'], data['name'], data['owner_id'],
                           data['species_id'], data['gender'], data['color'])
 
-            return snake.__dict__
+            if snake.species_id == 2:
+                return []
+            elif snake is not None:
+                return snake.__dict__
+            
 
         if resource == 'owners':
             db_cursor.execute("""

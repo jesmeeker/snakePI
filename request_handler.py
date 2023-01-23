@@ -20,7 +20,9 @@ class HandleRequests(BaseHTTPRequestHandler):
             if id is not None:
                 response = method_mapper["single"](resource, id)
 
-                if response is not None:
+                if response == []:
+                    self._set_headers(405)
+                elif response is not None:
                     self._set_headers(200)
                 else:
                     self._set_headers(404)

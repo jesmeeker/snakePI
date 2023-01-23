@@ -38,3 +38,5 @@ insert into Snakes (id, name, owner_id, species_id, gender, color) values (29, '
 insert into Snakes (id, name, owner_id, species_id, gender, color) values (30, 'Liè', 7, 1, 'Female', 'Maroon');
 
 DROP TABLE IF EXISTS Snakes;
+
+insert into Snakes values (33, 'Caleb', 7, 1, 'Male', 'Blonde')
